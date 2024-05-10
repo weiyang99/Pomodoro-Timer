@@ -12,7 +12,7 @@ const Timer = () => {
     const [rest, setRest] = useState(5);
     const [darkMode, setDarkMode] = useState(false);
     const [startTimer, setStartTimer] = useState(false);
-    const [working, setWorking] = useState(false);
+    const [working, setWorking] = useState(true);
     const [cycles, setCycles] = useState(0);
     const [time, setTime] = useState(work * 60);
     const [timeLapsed, setTimeLapsed] = useState(0);

@@ -4,19 +4,20 @@ import Image from 'next/image'
 type Props = {
     type: string,
     handleTimer: () => void,
-    startTimer: boolean
+    startTimer: boolean,
+    darkMode: boolean
 }
 
-const Control = ({ type, handleTimer, startTimer }: Props) => {
+const Control = ({ type, handleTimer, startTimer, darkMode }: Props) => {
     return (
         <Button
             size={type == "play" ? "lg" : "md"}
             borderRadius="0.75rem"
             textAlign="center"
             boxShadow="lg"
-            bgColor={type == "play" ? "#FF7C7E" : "#FEDAD8"}
-            _hover={{ bg: type == "play" ? "#471514" : "#fff" }}
-            _active={{ bg: type == "play" ? "#FF7C7E" : "#FEDAD8" }}
+            bgColor={type == "play" ? (darkMode ? "#B85C38" : "#FF7C7E") : (darkMode ? "#DCD7C9" : "#FEDAD8")}
+            _hover={{ bg: type == "play" ? (darkMode ? "#A27B5C" : "#471514") : "#fff" }}
+            _active={{ bg: type == "play" ? (darkMode ? "#B85C38" : "#FF7C7E") : (darkMode ? "#DCD7C9" : "#FEDAD8") }}
             onClick={handleTimer}
         >
             {type == "reset"
